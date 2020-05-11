@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray<NSLayoutConstraint *> *qq_edgeCons;
 
 /// top constant
-- (NSLayoutConstraint *) q_top;
+- (NSLayoutConstraint *) q_topEqualSuperView;
 - (NSLayoutConstraint *) q_topConstant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_top: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_topLessThanOrEqual: (CGFloat) constant;
@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *) q_topGreaterThanOrEqual: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 
 /// left
-- (NSLayoutConstraint *) q_left;
+- (NSLayoutConstraint *) q_leftEqualSuperView;
 - (NSLayoutConstraint *) q_leftConstant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_left: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_leftLessThanOrEqual: (CGFloat) constant;
@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *) q_leftGreaterThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 
 /// leading constant
-- (NSLayoutConstraint *) q_leading;
+- (NSLayoutConstraint *) q_leadingEqualSuperView;
 - (NSLayoutConstraint *) q_leadingConstant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_leading: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_leadingLessThanOrEqual: (CGFloat) constant;
@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *) q_leadingGreaterThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 
 /// bottom constant
-- (NSLayoutConstraint *) q_bottom;
+- (NSLayoutConstraint *) q_bottomEqualSuperView;
 - (NSLayoutConstraint *) q_bottomConstant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_bottom: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_bottomLessThanOrEqual: (CGFloat) constant;
@@ -61,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *) q_bottomGreaterThanOrEqual: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 
 /// right constant
-- (NSLayoutConstraint *) q_right;
+- (NSLayoutConstraint *) q_rightEqualSuperView;
 - (NSLayoutConstraint *) q_rightConstant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_right: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_rightLessThanOrEqual: (CGFloat) constant;
@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *) q_rightGreaterThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 
 /// trailing constant
-- (NSLayoutConstraint *) q_trailing;
+- (NSLayoutConstraint *) q_trailingEqualSuperView;
 - (NSLayoutConstraint *) q_trailingConstant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_trailing: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_trailingLessThanOrEqual: (CGFloat) constant;
@@ -79,7 +79,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *) q_trailingGreaterThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 
 /// width constant
-- (NSLayoutConstraint *) q_width;
+- (NSLayoutConstraint *) q_widthEqualSuperView;
 - (NSLayoutConstraint *) q_widthConstant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_widthLessThanOrEqual: (CGFloat) constant;
 - (NSLayoutConstraint *) q_widthGreaterThanOrEqual: (CGFloat) constant;
@@ -87,7 +87,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *) q_width: (NSLayoutDimension *) superViewLayoutAnchor multiplier: (CGFloat)multiplier constant: (CGFloat) constant;
 
 /// height constant
-- (NSLayoutConstraint *) q_height;
+- (NSLayoutConstraint *) q_heightEqualSuperView;
 - (NSLayoutConstraint *) q_heightConstant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_heightLessThanOrEqual: (CGFloat) constant;
 - (NSLayoutConstraint *) q_heightGreaterThanOrEqual: (CGFloat) constant;
@@ -95,17 +95,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *) q_height: (NSLayoutDimension *) superViewLayoutAnchor multiplier: (CGFloat)multiplier constant: (CGFloat) constant;
 
 /// centerX constant
-- (NSLayoutConstraint *) q_centerX;
+- (NSLayoutConstraint *) q_centerXEqualSuperView;
 - (NSLayoutConstraint *) q_centerXConstant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_centerX: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 
 /// centerY constant
-- (NSLayoutConstraint *) q_centerY;
+- (NSLayoutConstraint *) q_centerYEqualSuperView;
 - (NSLayoutConstraint *) q_centerYConstant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_centerY: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 
 /// edge constant
-- (NSArray <NSLayoutConstraint *> *) q_edge;
+- (NSArray <NSLayoutConstraint *> *) q_edgeEqualSuperView;
 // insets top, left, bottom, right
 - (NSArray <NSLayoutConstraint *> *) q_edge: (UIEdgeInsets) insets;
 

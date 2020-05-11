@@ -41,7 +41,7 @@
 
 
 - (void) test2: (UIView *) view {
-    [view q_edge];
+    [view q_edgeEqualSuperView];
 }
 
 - (void) test4: (UIView *) view {
@@ -51,8 +51,8 @@
 - (void) test3: (UIView *) view {
     [view q_widthConstant:100];
     [view q_heightConstant:100];
-    [view q_centerX];
-    [view q_centerY];
+    [view q_centerXEqualSuperView];
+    [view q_centerYEqualSuperView];
 }
 
 @end

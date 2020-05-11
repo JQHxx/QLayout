@@ -12,7 +12,7 @@
 @implementation UIView (QLayout)
 
 #pragma mark - top
-- (NSLayoutConstraint *) q_top {
+- (NSLayoutConstraint *) q_topEqualSuperView {
     [self setTopConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -87,7 +87,7 @@
 }
 
 #pragma mark - left
-- (NSLayoutConstraint *) q_left {
+- (NSLayoutConstraint *) q_leftEqualSuperView {
     [self setLeftConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -162,7 +162,7 @@
 }
 
 #pragma mark - leading
-- (NSLayoutConstraint *) q_leading {
+- (NSLayoutConstraint *) q_leadingEqualSuperView {
     [self setLeadingConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -237,7 +237,7 @@
 }
 
 #pragma mark - bottom
-- (NSLayoutConstraint *) q_bottom {
+- (NSLayoutConstraint *) q_bottomEqualSuperView {
     [self setBottomConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -313,7 +313,7 @@
 
 
 #pragma mark - right
-- (NSLayoutConstraint *) q_right {
+- (NSLayoutConstraint *) q_rightEqualSuperView {
     [self setRightConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -388,7 +388,7 @@
 }
 
 #pragma mark - trailing
-- (NSLayoutConstraint *) q_trailing {
+- (NSLayoutConstraint *) q_trailingEqualSuperView {
     [self setTrailingConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -463,7 +463,7 @@
 }
 
 #pragma mark - width
-- (NSLayoutConstraint *) q_width {
+- (NSLayoutConstraint *) q_widthEqualSuperView {
     [self setWidthConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -522,7 +522,7 @@
 }
 
 #pragma mark - height
-- (NSLayoutConstraint *) q_height {
+- (NSLayoutConstraint *) q_heightEqualSuperView {
     [self setHeightConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -581,7 +581,7 @@
 }
 
 #pragma mark - centerX
-- (NSLayoutConstraint *) q_centerX {
+- (NSLayoutConstraint *) q_centerXEqualSuperView {
     [self setCenterXConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -614,7 +614,7 @@
 }
 
 #pragma mark - centerY
-- (NSLayoutConstraint *) q_centerY {
+- (NSLayoutConstraint *) q_centerYEqualSuperView {
     [self setCenterYConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -647,11 +647,11 @@
 }
 
 #pragma mark - edge
-- (NSArray <NSLayoutConstraint *> *) q_edge {
-    NSLayoutConstraint *topCons = [self q_top];
-    NSLayoutConstraint *leftCons = [self q_left];
-    NSLayoutConstraint *bottomCons = [self q_bottom];
-    NSLayoutConstraint *rightCons = [self q_right];
+- (NSArray <NSLayoutConstraint *> *) q_edgeEqualSuperView {
+    NSLayoutConstraint *topCons = [self q_topEqualSuperView];
+    NSLayoutConstraint *leftCons = [self q_leftEqualSuperView];
+    NSLayoutConstraint *bottomCons = [self q_bottomEqualSuperView];
+    NSLayoutConstraint *rightCons = [self q_rightEqualSuperView];
     NSMutableArray *cons = [NSMutableArray array];
     [cons addObject:topCons];
     [cons addObject:leftCons];
