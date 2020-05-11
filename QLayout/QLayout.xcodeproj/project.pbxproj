@@ -15,7 +15,7 @@
 		A018FDD824691252007703F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A018FDD724691252007703F6 /* main.m */; };
 		A018FDE224691252007703F6 /* QLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A018FDE124691252007703F6 /* QLayoutTests.m */; };
 		A018FDED24691252007703F6 /* QLayoutUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A018FDEC24691252007703F6 /* QLayoutUITests.m */; };
-		A018FDFF2469127E007703F6 /* UIView+QLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A018FDFE2469127E007703F6 /* UIView+QLayout.m */; };
+		A018FE02246926E3007703F6 /* UIView+QLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A018FE01246926E3007703F6 /* UIView+QLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +52,8 @@
 		A018FDE824691252007703F6 /* QLayoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLayoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A018FDEC24691252007703F6 /* QLayoutUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLayoutUITests.m; sourceTree = "<group>"; };
 		A018FDEE24691252007703F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A018FDFB2469127E007703F6 /* QLayoutInline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLayoutInline.h; sourceTree = "<group>"; };
-		A018FDFC2469127E007703F6 /* QLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLayout.h; sourceTree = "<group>"; };
-		A018FDFD2469127E007703F6 /* UIView+QLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QLayout.h"; sourceTree = "<group>"; };
-		A018FDFE2469127E007703F6 /* UIView+QLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QLayout.m"; sourceTree = "<group>"; };
+		A018FE00246926E3007703F6 /* UIView+QLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QLayout.h"; sourceTree = "<group>"; };
+		A018FE01246926E3007703F6 /* UIView+QLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QLayout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,10 +139,8 @@
 		A018FDFA2469126A007703F6 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				A018FDFC2469127E007703F6 /* QLayout.h */,
-				A018FDFB2469127E007703F6 /* QLayoutInline.h */,
-				A018FDFD2469127E007703F6 /* UIView+QLayout.h */,
-				A018FDFE2469127E007703F6 /* UIView+QLayout.m */,
+				A018FE00246926E3007703F6 /* UIView+QLayout.h */,
+				A018FE01246926E3007703F6 /* UIView+QLayout.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -279,9 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A018FDFF2469127E007703F6 /* UIView+QLayout.m in Sources */,
 				A018FDCD2469124E007703F6 /* ViewController.m in Sources */,
 				A018FDC72469124E007703F6 /* AppDelegate.m in Sources */,
+				A018FE02246926E3007703F6 /* UIView+QLayout.m in Sources */,
 				A018FDD824691252007703F6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
