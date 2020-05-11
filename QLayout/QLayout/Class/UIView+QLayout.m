@@ -473,12 +473,11 @@
     self.qq_widthCons = cons;
     return cons;
 }
+
 - (NSLayoutConstraint *) q_widthConstant: (CGFloat) constant {
     [self setWidthConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    UIView *superview = self.superview;
-    NSAssert(superview != nil, @"View's superview must not be nil.\nView: %@", self);
-    NSLayoutConstraint *cons = [self.widthAnchor constraintEqualToAnchor:superview.widthAnchor constant:constant];
+    NSLayoutConstraint *cons = [self.widthAnchor constraintEqualToConstant:constant];
     cons.active = YES;
     self.qq_widthCons = cons;
     return cons;
@@ -537,9 +536,7 @@
 - (NSLayoutConstraint *) q_heightConstant: (CGFloat) constant {
     [self setHeightConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    UIView *superview = self.superview;
-    NSAssert(superview != nil, @"View's superview must not be nil.\nView: %@", self);
-    NSLayoutConstraint *cons = [self.heightAnchor constraintEqualToAnchor:superview.heightAnchor constant:constant];
+    NSLayoutConstraint *cons = [self.heightAnchor constraintEqualToConstant: constant];
     cons.active = YES;
     self.qq_heightCons = cons;
     return cons;

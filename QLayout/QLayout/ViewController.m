@@ -21,9 +21,9 @@
     UIView *readView = [[UIView alloc]init];
     readView.backgroundColor = [UIColor redColor];
     [self.view addSubview:readView];
-    [self test1:readView];
+    //[self test1:readView];
     //[self test2:readView];
-    //[self test3:readView];
+    [self test3:readView];
     // [self test4:readView];
 
 }
