@@ -30,13 +30,13 @@
 
 - (void) test1: (UIView *) view {
     [view removeAllConstant];
-    [view q_topEqual:self.view.topAnchor constant:0];
-    [view q_leftEqual:self.view.leftAnchor constant:0];
-    [view q_rightEqual:self.view.rightAnchor constant:0];
+    [view q_topEqualYAxisAnchor:self.view.topAnchor constant:0];
+    [view q_leftEqualXAxisAnchor:self.view.leftAnchor constant:0];
+    [view q_rightEqualXAxisAnchor:self.view.rightAnchor constant:0];
     if (@available(iOS 11.0, *)) {
-        [view q_bottomEqual:self.view.safeAreaLayoutGuide.bottomAnchor constant:0];
+        [view q_bottomEqualYAxisAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:0];
     } else {
-        [view q_bottomEqual:self.view.bottomAnchor constant:0];
+        [view q_bottomEqualYAxisAnchor:self.view.bottomAnchor constant:0];
     }
 }
 

@@ -34,7 +34,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_topEqual: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_topEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setTopConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor top must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -66,7 +66,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_topLessThanOrEqual: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_topLessThanOrEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setTopConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor topLessThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -76,7 +76,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_topGreaterThanOrEqual: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_topGreaterThanOrEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setTopConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor topGreaterThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -109,7 +109,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_leftEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_leftEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setLeftConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor left must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -141,7 +141,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_leftLessThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_leftLessThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setLeftConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor leftLessThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -151,7 +151,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_leftGreaterThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_leftGreaterThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setLeftConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor leftGreaterThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -184,7 +184,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_leadingEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_leadingEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setLeadingConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor leading must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -216,7 +216,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_leadingLessThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_leadingLessThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setLeadingConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor leadingLessThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -226,7 +226,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_leadingGreaterThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_leadingGreaterThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setLeadingConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor leadingGreaterThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -259,7 +259,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_bottomEqual: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_bottomEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setBottomConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor bottom must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -291,7 +291,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_bottomLessThanOrEqual: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_bottomLessThanOrEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setBottomConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor bottomLessThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -301,7 +301,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_bottomGreaterThanOrEqual: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_bottomGreaterThanOrEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setBottomConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor bottomGreaterThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -335,7 +335,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_rightEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_rightEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setRightConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor right must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -367,7 +367,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_rightLessThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_rightLessThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setRightConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor rightLessThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -377,7 +377,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_rightGreaterThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_rightGreaterThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setRightConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor rightGreaterThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -410,7 +410,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_trailingEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_trailingEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setTrailingConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor trailing must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -442,7 +442,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_trailingLessThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_trailingLessThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setTrailingConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor trailingLessThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -452,7 +452,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_trailingGreaterThanOrEqual: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_trailingGreaterThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setTrailingConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor trailingGreaterThanOrEqual must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -483,7 +483,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_widthEqual: (NSLayoutDimension *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_widthEqualDimension: (NSLayoutDimension *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setWidthConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor width must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -493,7 +493,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_widthEqual: (NSLayoutDimension *) superViewLayoutAnchor multiplier: (CGFloat)multiplier constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_widthEqualDimension: (NSLayoutDimension *) superViewLayoutAnchor multiplier: (CGFloat)multiplier constant: (CGFloat) constant {
     [self setWidthConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor widthAnchor multiplier must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -542,7 +542,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_heightEqual: (NSLayoutDimension *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_heightEqualDimension: (NSLayoutDimension *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setHeightConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor heightAnchor must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -552,7 +552,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_heightEqual: (NSLayoutDimension *) superViewLayoutAnchor multiplier: (CGFloat)multiplier constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_heightEqualDimension: (NSLayoutDimension *) superViewLayoutAnchor multiplier: (CGFloat)multiplier constant: (CGFloat) constant {
     [self setHeightConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor heightAnchor multiplier must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -613,7 +613,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_centerXEqual: (NSLayoutAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_centerXEqualXAxisAnchor: (NSLayoutAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setCenterXConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor centerX must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -646,7 +646,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_centerYEqual: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
+- (NSLayoutConstraint *) q_centerYEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant {
     [self setCenterYConsNoActive];
     NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor centerY must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
