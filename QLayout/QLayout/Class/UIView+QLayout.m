@@ -656,6 +656,16 @@
     return cons;
 }
 
+#pragma mark - center
+- (NSArray <NSLayoutConstraint *> *) q_centerEqualSuperView {
+    NSLayoutConstraint *centerXCons = [self q_centerXEqualSuperView];
+    NSLayoutConstraint *centerYCons = [self q_centerYEqualSuperView];
+    NSMutableArray *cons = [NSMutableArray array];
+    [cons addObject:centerXCons];
+    [cons addObject:centerYCons];
+    return cons;
+}
+
 #pragma mark - edge
 - (NSArray <NSLayoutConstraint *> *) q_edgeEqualSuperView {
     NSLayoutConstraint *topCons = [self q_topEqualSuperView];

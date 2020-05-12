@@ -107,6 +107,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *) q_centerYEqualSuperView: (CGFloat) constant;
 - (NSLayoutConstraint *) q_centerYEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 
+/// center
+- (NSArray <NSLayoutConstraint *> *) q_centerEqualSuperView;
+
 /// edge constant
 - (NSArray <NSLayoutConstraint *> *) q_edgeEqualSuperView;
 // insets top, left, bottom, right
