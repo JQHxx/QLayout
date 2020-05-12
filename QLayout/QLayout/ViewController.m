@@ -21,38 +21,44 @@
     UIView *readView = [[UIView alloc]init];
     readView.backgroundColor = [UIColor redColor];
     [self.view addSubview:readView];
-    //[self test1:readView];
-    //[self test2:readView];
+    [self test1:readView];
+    [self test2:readView];
     [self test3:readView];
-    // [self test4:readView];
-
+    [self test4:readView];
+    
 }
 
 - (void) test1: (UIView *) view {
-    [view q_top:self.view.topAnchor constant:0];
-    [view q_left:self.view.leftAnchor constant:0];
-    [view q_right:self.view.rightAnchor constant:0];
+    [view removeAllConstant];
+    [view q_topEqual:self.view.topAnchor constant:0];
+    [view q_leftEqual:self.view.leftAnchor constant:0];
+    [view q_rightEqual:self.view.rightAnchor constant:0];
     if (@available(iOS 11.0, *)) {
-        [view q_bottom:self.view.safeAreaLayoutGuide.bottomAnchor constant:0];
+        [view q_bottomEqual:self.view.safeAreaLayoutGuide.bottomAnchor constant:0];
     } else {
-        [view q_bottom:self.view.bottomAnchor constant:0];
+        [view q_bottomEqual:self.view.bottomAnchor constant:0];
     }
 }
 
 
 - (void) test2: (UIView *) view {
+    [view removeAllConstant];
     [view q_edgeEqualSuperView];
 }
 
-- (void) test4: (UIView *) view {
-    [view q_edge:UIEdgeInsetsMake(10, 0, -10, 0)];
-}
-
 - (void) test3: (UIView *) view {
-    [view q_widthConstant:100];
-    [view q_heightConstant:100];
+    [view removeAllConstant];
+    [view q_widthEqual:100];
+    [view q_heightEqual:100];
     [view q_centerXEqualSuperView];
     [view q_centerYEqualSuperView];
 }
+
+- (void) test4: (UIView *) view {
+    [view removeAllConstant];
+    [view q_edgeEqualSuperView:UIEdgeInsetsMake(10, 0, -10, 0)];
+}
+
+
 
 @end
