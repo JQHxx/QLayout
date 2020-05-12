@@ -27,8 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// top constant
 - (NSLayoutConstraint *) q_topEqualSuperView;
 - (NSLayoutConstraint *) q_topEqualSuperView: (CGFloat) constant;
-- (NSLayoutConstraint *) q_topLessThanOrEqual: (CGFloat) constant;
-- (NSLayoutConstraint *) q_topGreaterThanOrEqual: (CGFloat) constant;
+- (NSLayoutConstraint *) q_topLessThanOrEqualSuperView: (CGFloat) constant;
+- (NSLayoutConstraint *) q_topGreaterThanOrEqualSuperView: (CGFloat) constant;
 - (NSLayoutConstraint *) q_topEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_topLessThanOrEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_topGreaterThanOrEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
@@ -36,8 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// left
 - (NSLayoutConstraint *) q_leftEqualSuperView;
 - (NSLayoutConstraint *) q_leftEqualSuperView: (CGFloat) constant;
-- (NSLayoutConstraint *) q_leftLessThanOrEqual: (CGFloat) constant;
-- (NSLayoutConstraint *) q_leftGreaterThanOrEqual: (CGFloat) constant;
+- (NSLayoutConstraint *) q_leftLessThanOrEqualSuperView: (CGFloat) constant;
+- (NSLayoutConstraint *) q_leftGreaterThanOrEqualSuperView: (CGFloat) constant;
 - (NSLayoutConstraint *) q_leftEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_leftLessThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_leftGreaterThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
@@ -45,8 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// leading constant
 - (NSLayoutConstraint *) q_leadingEqualSuperView;
 - (NSLayoutConstraint *) q_leadingEqualSuperView: (CGFloat) constant;
-- (NSLayoutConstraint *) q_leadingLessThanOrEqual: (CGFloat) constant;
-- (NSLayoutConstraint *) q_leadingGreaterThanOrEqual: (CGFloat) constant;
+- (NSLayoutConstraint *) q_leadingLessThanOrEqualSuperView: (CGFloat) constant;
+- (NSLayoutConstraint *) q_leadingGreaterThanOrEqualSuperView: (CGFloat) constant;
 - (NSLayoutConstraint *) q_leadingEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_leadingLessThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_leadingGreaterThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
@@ -54,8 +54,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// bottom constant
 - (NSLayoutConstraint *) q_bottomEqualSuperView;
 - (NSLayoutConstraint *) q_bottomEqualSuperView: (CGFloat) constant;
-- (NSLayoutConstraint *) q_bottomLessThanOrEqual: (CGFloat) constant;
-- (NSLayoutConstraint *) q_bottomGreaterThanOrEqual: (CGFloat) constant;
+- (NSLayoutConstraint *) q_bottomLessThanOrEqualSuperView: (CGFloat) constant;
+- (NSLayoutConstraint *) q_bottomGreaterThanOrEqualSuperView: (CGFloat) constant;
 - (NSLayoutConstraint *) q_bottomEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_bottomLessThanOrEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_bottomGreaterThanOrEqualYAxisAnchor: (NSLayoutYAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
@@ -63,8 +63,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// right constant
 - (NSLayoutConstraint *) q_rightEqualSuperView;
 - (NSLayoutConstraint *) q_rightEqualSuperView: (CGFloat) constant;
-- (NSLayoutConstraint *) q_rightLessThanOrEqual: (CGFloat) constant;
-- (NSLayoutConstraint *) q_rightGreaterThanOrEqual: (CGFloat) constant;
+- (NSLayoutConstraint *) q_rightLessThanOrEqualSuperView: (CGFloat) constant;
+- (NSLayoutConstraint *) q_rightGreaterThanOrEqualSuperView: (CGFloat) constant;
 - (NSLayoutConstraint *) q_rightEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_rightLessThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_rightGreaterThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
@@ -72,8 +72,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// trailing constant
 - (NSLayoutConstraint *) q_trailingEqualSuperView;
 - (NSLayoutConstraint *) q_trailingEqualSuperView: (CGFloat) constant;
-- (NSLayoutConstraint *) q_trailingLessThanOrEqual: (CGFloat) constant;
-- (NSLayoutConstraint *) q_trailingGreaterThanOrEqual: (CGFloat) constant;
+- (NSLayoutConstraint *) q_trailingLessThanOrEqualSuperView: (CGFloat) constant;
+- (NSLayoutConstraint *) q_trailingGreaterThanOrEqualSuperView: (CGFloat) constant;
 - (NSLayoutConstraint *) q_trailingEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_trailingLessThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
 - (NSLayoutConstraint *) q_trailingGreaterThanOrEqualXAxisAnchor: (NSLayoutXAxisAnchor *) superViewLayoutAnchor constant: (CGFloat) constant;
@@ -111,9 +111,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray <NSLayoutConstraint *> *) q_centerEqualSuperView;
 
 /// edge constant
-- (NSArray <NSLayoutConstraint *> *) q_edgeEqualSuperView;
+- (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperView;
 // insets top, left, bottom, right
-- (NSArray <NSLayoutConstraint *> *) q_edgeEqualSuperView: (UIEdgeInsets) insets;
+- (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperView: (UIEdgeInsets) insets;
+- (NSArray <NSLayoutConstraint *> *) q_edgesToView: (UIView *) view withInsets: (UIEdgeInsets) insets;
 
 /// remove
 - (void) removeAllConstant;

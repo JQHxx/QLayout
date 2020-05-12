@@ -22,9 +22,15 @@
     readView.backgroundColor = [UIColor redColor];
     [self.view addSubview:readView];
     [self test1:readView];
-    [self test2:readView];
-    [self test3:readView];
-    [self test4:readView];
+//    [self test1:readView];
+//    [self test1:readView];
+//    [self test1:readView];
+//    [self test1:readView];
+//    [self test1:readView];
+//    [self test1:readView];
+    //[self test2:readView];
+    //[self test3:readView];
+    //[self test4:readView];
     
 }
 
@@ -43,7 +49,7 @@
 
 - (void) test2: (UIView *) view {
     [view removeAllConstant];
-    [view q_edgeEqualSuperView];
+    [view q_edgesEqualSuperView];
 }
 
 - (void) test3: (UIView *) view {
@@ -55,7 +61,7 @@
 
 - (void) test4: (UIView *) view {
     [view removeAllConstant];
-    [view q_edgeEqualSuperView:UIEdgeInsetsMake(10, 0, -10, 0)];
+    [view q_edgesEqualSuperView:UIEdgeInsetsMake(10, 0, -10, 0)];
 }
 
 @end

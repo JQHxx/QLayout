@@ -44,7 +44,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_topLessThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_topLessThanOrEqualSuperView: (CGFloat) constant {
     [self setTopConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -55,7 +55,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_topGreaterThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_topGreaterThanOrEqualSuperView: (CGFloat) constant {
     [self setTopConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -119,7 +119,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_leftLessThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_leftLessThanOrEqualSuperView: (CGFloat) constant {
     [self setLeftConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -130,7 +130,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_leftGreaterThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_leftGreaterThanOrEqualSuperView: (CGFloat) constant {
     [self setLeftConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -194,7 +194,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_leadingLessThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_leadingLessThanOrEqualSuperView: (CGFloat) constant {
     [self setLeadingConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -205,7 +205,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_leadingGreaterThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_leadingGreaterThanOrEqualSuperView: (CGFloat) constant {
     [self setLeadingConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -269,7 +269,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_bottomLessThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_bottomLessThanOrEqualSuperView: (CGFloat) constant {
     [self setBottomConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -280,7 +280,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_bottomGreaterThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_bottomGreaterThanOrEqualSuperView: (CGFloat) constant {
     [self setBottomConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -345,7 +345,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_rightLessThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_rightLessThanOrEqualSuperView: (CGFloat) constant {
     [self setRightConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -356,7 +356,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_rightGreaterThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_rightGreaterThanOrEqualSuperView: (CGFloat) constant {
     [self setRightConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -420,7 +420,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_trailingLessThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_trailingLessThanOrEqualSuperView: (CGFloat) constant {
     [self setTrailingConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -431,7 +431,7 @@
     return cons;
 }
 
-- (NSLayoutConstraint *) q_trailingGreaterThanOrEqual: (CGFloat) constant {
+- (NSLayoutConstraint *) q_trailingGreaterThanOrEqualSuperView: (CGFloat) constant {
     [self setTrailingConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     UIView *superview = self.superview;
@@ -667,7 +667,7 @@
 }
 
 #pragma mark - edge
-- (NSArray <NSLayoutConstraint *> *) q_edgeEqualSuperView {
+- (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperView {
     NSLayoutConstraint *topCons = [self q_topEqualSuperView];
     NSLayoutConstraint *leftCons = [self q_leftEqualSuperView];
     NSLayoutConstraint *bottomCons = [self q_bottomEqualSuperView];
@@ -680,11 +680,24 @@
     return cons;
 }
 
-- (NSArray <NSLayoutConstraint *> *) q_edgeEqualSuperView: (UIEdgeInsets) insets {
+- (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperView: (UIEdgeInsets) insets {
     NSLayoutConstraint *topCons = [self q_topEqualSuperView:insets.top];
     NSLayoutConstraint *leftCons = [self q_leftEqualSuperView:insets.left];
     NSLayoutConstraint *bottomCons = [self q_bottomEqualSuperView:insets.bottom];
     NSLayoutConstraint *rightCons = [self q_rightEqualSuperView:insets.right];
+    NSMutableArray *cons = [NSMutableArray array];
+    [cons addObject:topCons];
+    [cons addObject:leftCons];
+    [cons addObject:bottomCons];
+    [cons addObject:rightCons];
+    return cons;
+}
+
+- (NSArray <NSLayoutConstraint *> *) q_edgesToView: (UIView *) view withInsets: (UIEdgeInsets) insets {
+    NSLayoutConstraint *topCons = [self q_topEqualYAxisAnchor:view.topAnchor constant:insets.top];
+    NSLayoutConstraint *leftCons = [self q_leftEqualXAxisAnchor:view.leftAnchor constant:insets.left];
+    NSLayoutConstraint *bottomCons = [self q_bottomEqualYAxisAnchor:view.bottomAnchor constant:insets.bottom];
+    NSLayoutConstraint *rightCons = [self q_rightEqualXAxisAnchor:view.rightAnchor constant:insets.right];
     NSMutableArray *cons = [NSMutableArray array];
     [cons addObject:topCons];
     [cons addObject:leftCons];
