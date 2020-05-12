@@ -49,7 +49,7 @@
 
 - (void) test2: (UIView *) view {
     [view removeAllConstant];
-    [view q_edgesEqualSuperView];
+    [view q_edgesEqualSuperViewSafeArea];
 }
 
 - (void) test3: (UIView *) view {

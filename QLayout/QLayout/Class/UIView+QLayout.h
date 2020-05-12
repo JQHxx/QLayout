@@ -112,8 +112,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// edge constant
 - (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperView;
+- (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperViewSafeArea;
 // insets top, left, bottom, right
 - (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperView: (UIEdgeInsets) insets;
+- (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperViewSafeArea: (UIEdgeInsets) insets;
 - (NSArray <NSLayoutConstraint *> *) q_edgesToView: (UIView *) view withInsets: (UIEdgeInsets) insets;
 
 /// remove

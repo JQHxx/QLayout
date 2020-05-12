@@ -680,11 +680,63 @@
     return cons;
 }
 
+- (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperViewSafeArea {
+    NSLayoutConstraint *topCons;
+    NSLayoutConstraint *leftCons;
+    NSLayoutConstraint *bottomCons;
+    NSLayoutConstraint *rightCons;
+    if (@available(iOS 11.0, *)) {
+        UIView *superview = self.superview;
+        NSAssert(superview != nil, @"View's superview must not be nil.\nView: %@", self);
+        topCons = [self q_topEqualYAxisAnchor:superview.safeAreaLayoutGuide.topAnchor constant:0];
+        leftCons = [self q_leftEqualXAxisAnchor:superview.safeAreaLayoutGuide.leftAnchor constant:0];
+        bottomCons = [self q_bottomEqualYAxisAnchor:superview.safeAreaLayoutGuide.bottomAnchor constant:0];
+        rightCons = [self q_rightEqualXAxisAnchor:superview.safeAreaLayoutGuide.rightAnchor constant:0];
+    } else {
+        topCons = [self q_topEqualSuperView];
+        leftCons = [self q_leftEqualSuperView];
+        bottomCons = [self q_bottomEqualSuperView];
+        rightCons = [self q_rightEqualSuperView];
+    }
+    NSMutableArray *cons = [NSMutableArray array];
+    [cons addObject:topCons];
+    [cons addObject:leftCons];
+    [cons addObject:bottomCons];
+    [cons addObject:rightCons];
+    return cons;
+}
+
 - (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperView: (UIEdgeInsets) insets {
     NSLayoutConstraint *topCons = [self q_topEqualSuperView:insets.top];
     NSLayoutConstraint *leftCons = [self q_leftEqualSuperView:insets.left];
     NSLayoutConstraint *bottomCons = [self q_bottomEqualSuperView:insets.bottom];
     NSLayoutConstraint *rightCons = [self q_rightEqualSuperView:insets.right];
+    NSMutableArray *cons = [NSMutableArray array];
+    [cons addObject:topCons];
+    [cons addObject:leftCons];
+    [cons addObject:bottomCons];
+    [cons addObject:rightCons];
+    return cons;
+}
+
+- (NSArray <NSLayoutConstraint *> *) q_edgesEqualSuperViewSafeArea: (UIEdgeInsets) insets {
+    NSLayoutConstraint *topCons;
+    NSLayoutConstraint *leftCons;
+    NSLayoutConstraint *bottomCons;
+    NSLayoutConstraint *rightCons;
+    UIView *superview = self.superview;
+    NSAssert(superview != nil, @"View's superview must not be nil.\nView: %@", self);
+    if (@available(iOS 11.0, *)) {
+        topCons = [self q_topEqualYAxisAnchor:superview.safeAreaLayoutGuide.topAnchor constant:insets.top];
+        leftCons = [self q_leftEqualXAxisAnchor:superview.safeAreaLayoutGuide.leftAnchor constant:insets.left];
+        bottomCons = [self q_bottomEqualYAxisAnchor:superview.safeAreaLayoutGuide.bottomAnchor constant:insets.bottom];
+        rightCons = [self q_rightEqualXAxisAnchor:superview.safeAreaLayoutGuide.rightAnchor constant:insets.right];
+    } else {
+        topCons = [self q_topEqualYAxisAnchor:superview.topAnchor constant:insets.top];
+        leftCons = [self q_leftEqualXAxisAnchor:superview.leftAnchor constant:insets.left];
+        bottomCons = [self q_bottomEqualYAxisAnchor:superview.bottomAnchor constant:insets.bottom];
+        rightCons = [self q_rightEqualXAxisAnchor:superview.rightAnchor constant:insets.right];
+    }
     NSMutableArray *cons = [NSMutableArray array];
     [cons addObject:topCons];
     [cons addObject:leftCons];
