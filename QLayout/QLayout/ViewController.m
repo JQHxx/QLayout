@@ -48,8 +48,6 @@
 
 - (void) test3: (UIView *) view {
     [view removeAllConstant];
-    //[view q_widthEqual:100];
-    //[view q_heightEqual:100];
     [view q_centerXEqualSuperView];
     [view q_centerYEqualSuperView];
     [view q_sizeEqual:CGSizeMake(100, 100)];
@@ -59,7 +57,5 @@
     [view removeAllConstant];
     [view q_edgeEqualSuperView:UIEdgeInsetsMake(10, 0, -10, 0)];
 }
-
-
 
 @end
