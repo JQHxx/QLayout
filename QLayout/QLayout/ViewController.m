@@ -34,7 +34,7 @@
     [@[readView, greenView] q_viewsWidthEqual];
     [@[readView, greenView] q_viewsHeightEqual];
     
-    [readView q_sizeEqual:CGSizeMake(50, 100)];
+    [readView q_sizeEqualSize:CGSizeMake(50, 100)];
     [readView q_pinEdgeToSuperViewEdge:QEdgeTop withInset:100];
     [greenView q_pinEdge:QEdgeLeft toEdge:QEdgeRight ofView:readView];
     [readView q_pinEdgeToSuperViewEdge:QEdgeTop withInset:100];
@@ -70,12 +70,12 @@
     [view removeAllConstants];
     [view q_centerXEqualSuperView];
     [view q_centerYEqualSuperView];
-    [view q_sizeEqual:CGSizeMake(100, 100)];
+    [view q_sizeEqualSize:CGSizeMake(100, 100)];
 }
 
 - (void) test4: (UIView *) view {
     [view removeAllConstants];
-    [view q_pinEdgesEqualSuperView:UIEdgeInsetsMake(50, 0, -50, 0)];
+    [view q_pinEdgesEqualSuperViewInsets:UIEdgeInsetsMake(50, 0, -50, 0)];
 }
 
 

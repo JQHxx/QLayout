@@ -25,15 +25,15 @@
     return [self q_pinEdge:edge toEdge:edge ofView:superview withOffset:inset relation:relation isSafeArea: NO];
 }
 
-- (NSLayoutConstraint *)q_pinEdgeToSuperviewSafeArea:(QEdge)edge {
-    return [self q_pinEdgeToSuperviewSafeArea:edge withInset:0];
+- (NSLayoutConstraint *)q_pinEdgeToSuperviewSafeAreaEdge:(QEdge)edge {
+    return [self q_pinEdgeToSuperviewSafeAreaEdge:edge withInset:0];
 }
 
-- (NSLayoutConstraint *)q_pinEdgeToSuperviewSafeArea:(QEdge)edge withInset:(CGFloat)inset {
-    return [self q_pinEdgeToSuperviewSafeArea:edge withInset:inset relation:NSLayoutRelationEqual];
+- (NSLayoutConstraint *)q_pinEdgeToSuperviewSafeAreaEdge:(QEdge)edge withInset:(CGFloat)inset {
+    return [self q_pinEdgeToSuperviewSafeAreaEdge:edge withInset:inset relation:NSLayoutRelationEqual];
 }
 
-- (NSLayoutConstraint *)q_pinEdgeToSuperviewSafeArea:(QEdge)edge withInset:(CGFloat)inset relation:(NSLayoutRelation)relation {
+- (NSLayoutConstraint *)q_pinEdgeToSuperviewSafeAreaEdge:(QEdge)edge withInset:(CGFloat)inset relation:(NSLayoutRelation)relation {
     UIView *superview = self.superview;
     return [self q_pinEdge:edge toEdge:edge ofView:superview withOffset:inset relation:relation isSafeArea: YES];
 }
@@ -68,11 +68,11 @@
     return [self q_widthEqualDimension:superview.widthAnchor multiplier:1.0 constant:0 relation:NSLayoutRelationEqual];
 }
 
-- (NSLayoutConstraint *)q_widthEqual:(CGFloat)constant {
-    return [self q_widthEqual:constant relation:NSLayoutRelationEqual];
+- (NSLayoutConstraint *)q_widthEqualConstant:(CGFloat)constant {
+    return [self q_widthEqualConstant:constant relation:NSLayoutRelationEqual];
 }
 
-- (NSLayoutConstraint *)q_widthEqual:(CGFloat)constant relation:(NSLayoutRelation)relation {
+- (NSLayoutConstraint *)q_widthEqualConstant:(CGFloat)constant relation:(NSLayoutRelation)relation {
     [self setWidthConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *cons;
@@ -95,22 +95,22 @@
     return cons;
 }
 
-- (NSLayoutConstraint *)q_widthEqualDimension:(NSLayoutDimension *)superViewLayoutAnchor multiplier: (CGFloat)multiplier constant:(CGFloat)constant relation:(NSLayoutRelation)relation {
-    NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor must not be nil.\nView: %@", self);
+- (NSLayoutConstraint *)q_widthEqualDimension:(NSLayoutDimension *)otherDimension multiplier: (CGFloat)multiplier constant:(CGFloat)constant relation:(NSLayoutRelation)relation {
+    NSAssert(otherDimension != nil, @"superViewLayoutAnchor must not be nil.\nView: %@", self);
     [self setWidthConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *cons;
     switch (relation) {
         case NSLayoutRelationEqual: {
-            cons = [self.widthAnchor constraintEqualToAnchor:superViewLayoutAnchor multiplier:multiplier constant:constant];
+            cons = [self.widthAnchor constraintEqualToAnchor:otherDimension multiplier:multiplier constant:constant];
             break;
         }
         case NSLayoutRelationLessThanOrEqual: {
-            cons = [self.widthAnchor constraintLessThanOrEqualToAnchor:superViewLayoutAnchor multiplier:multiplier constant:constant];
+            cons = [self.widthAnchor constraintLessThanOrEqualToAnchor:otherDimension multiplier:multiplier constant:constant];
             break;
         }
         case NSLayoutRelationGreaterThanOrEqual: {
-            cons = [self.widthAnchor constraintGreaterThanOrEqualToAnchor:superViewLayoutAnchor multiplier:multiplier constant:constant];
+            cons = [self.widthAnchor constraintGreaterThanOrEqualToAnchor:otherDimension multiplier:multiplier constant:constant];
             break;
         }
     }
@@ -125,11 +125,11 @@
     return [self q_heightEqualDimension:superview.heightAnchor multiplier:1.0 constant:0 relation:NSLayoutRelationEqual];
 }
 
-- (NSLayoutConstraint *)q_heightEqual:(CGFloat)constant {
-    return [self q_heightEqual:constant relation:NSLayoutRelationEqual];
+- (NSLayoutConstraint *)q_heightEqualConstant:(CGFloat)constant {
+    return [self q_heightEqualConstant:constant relation:NSLayoutRelationEqual];
 }
 
-- (NSLayoutConstraint *)q_heightEqual:(CGFloat)constant relation:(NSLayoutRelation)relation {
+- (NSLayoutConstraint *)q_heightEqualConstant:(CGFloat)constant relation:(NSLayoutRelation)relation {
     [self setHeightConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *cons;
@@ -152,22 +152,22 @@
     return cons;
 }
 
-- (NSLayoutConstraint *)q_heightEqualDimension:(NSLayoutDimension *)superViewLayoutAnchor multiplier: (CGFloat)multiplier constant:(CGFloat)constant relation:(NSLayoutRelation)relation {
-    NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor must not be nil.\nView: %@", self);
+- (NSLayoutConstraint *)q_heightEqualDimension:(NSLayoutDimension *)otherDimension multiplier: (CGFloat)multiplier constant:(CGFloat)constant relation:(NSLayoutRelation)relation {
+    NSAssert(otherDimension != nil, @"superViewLayoutAnchor must not be nil.\nView: %@", self);
     [self setHeightConsNoActive];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *cons;
     switch (relation) {
         case NSLayoutRelationEqual: {
-            cons = [self.heightAnchor constraintEqualToAnchor:superViewLayoutAnchor multiplier:multiplier constant:constant];
+            cons = [self.heightAnchor constraintEqualToAnchor:otherDimension multiplier:multiplier constant:constant];
             break;
         }
         case NSLayoutRelationLessThanOrEqual: {
-            cons = [self.heightAnchor constraintLessThanOrEqualToAnchor:superViewLayoutAnchor multiplier:multiplier constant:constant];
+            cons = [self.heightAnchor constraintLessThanOrEqualToAnchor:otherDimension multiplier:multiplier constant:constant];
             break;
         }
         case NSLayoutRelationGreaterThanOrEqual: {
-            cons = [self.heightAnchor constraintGreaterThanOrEqualToAnchor:superViewLayoutAnchor multiplier:multiplier constant:constant];
+            cons = [self.heightAnchor constraintGreaterThanOrEqualToAnchor:otherDimension multiplier:multiplier constant:constant];
             break;
         }
     }
@@ -177,9 +177,9 @@
 }
 
 #pragma mark - size
-- (NSArray *)q_sizeEqual:(CGSize)size {
-    NSLayoutConstraint *widthCons = [self q_widthEqual:size.width];
-    NSLayoutConstraint *heightCons = [self q_heightEqual:size.height];
+- (NSArray *)q_sizeEqualSize:(CGSize)size {
+    NSLayoutConstraint *widthCons = [self q_widthEqualConstant:size.width];
+    NSLayoutConstraint *heightCons = [self q_heightEqualConstant:size.height];
     NSMutableArray *cons = [NSMutableArray array];
     [cons addObject:widthCons];
     [cons addObject:heightCons];
@@ -188,19 +188,19 @@
 
 #pragma mark - centerX
 - (NSLayoutConstraint *)q_centerXEqualSuperView {
-    return [self q_centerXEqualSuperView:0];
+    return [self q_centerXEqualSuperViewConstant:0];
 }
 
-- (NSLayoutConstraint *)q_centerXEqualSuperView: (CGFloat) constant {
+- (NSLayoutConstraint *)q_centerXEqualSuperViewConstant: (CGFloat) constant {
     UIView *superview = self.superview;
     return [self q_centerXEqualXAxisAnchor:superview.centerXAnchor constant:constant];
 }
 
-- (NSLayoutConstraint *)q_centerXEqualXAxisAnchor:(NSLayoutAnchor *)superViewLayoutAnchor constant:(CGFloat)constant {
+- (NSLayoutConstraint *)q_centerXEqualXAxisAnchor:(NSLayoutAnchor *)otherAnchor constant:(CGFloat)constant {
     [self setCenterXConsNoActive];
-    NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor centerX must not be nil.\nView: %@", self);
+    NSAssert(otherAnchor != nil, @"superViewLayoutAnchor centerX must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *cons = [self.centerXAnchor constraintEqualToAnchor:superViewLayoutAnchor constant:constant];
+    NSLayoutConstraint *cons = [self.centerXAnchor constraintEqualToAnchor:otherAnchor constant:constant];
     cons.active = YES;
     self.qq_centerXCons = cons;
     return cons;
@@ -208,19 +208,19 @@
 
 #pragma mark - centerY
 - (NSLayoutConstraint *)q_centerYEqualSuperView {
-    return [self q_centerYEqualSuperView: 0];
+    return [self q_centerYEqualSuperViewConstant: 0];
 }
 
-- (NSLayoutConstraint *)q_centerYEqualSuperView:(CGFloat)constant {
+- (NSLayoutConstraint *)q_centerYEqualSuperViewConstant:(CGFloat)constant {
     UIView *superview = self.superview;
     return [self q_centerYEqualYAxisAnchor:superview.centerYAnchor constant:constant];
 }
 
-- (NSLayoutConstraint *)q_centerYEqualYAxisAnchor:(NSLayoutYAxisAnchor *)superViewLayoutAnchor constant:(CGFloat)constant {
+- (NSLayoutConstraint *)q_centerYEqualYAxisAnchor:(NSLayoutYAxisAnchor *)otherAnchor constant:(CGFloat)constant {
     [self setCenterYConsNoActive];
-    NSAssert(superViewLayoutAnchor != nil, @"superViewLayoutAnchor centerY must not be nil.\nView: %@", self);
+    NSAssert(otherAnchor != nil, @"superViewLayoutAnchor centerY must not be nil.\nView: %@", self);
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *cons = [self.centerYAnchor constraintEqualToAnchor:superViewLayoutAnchor constant:constant];
+    NSLayoutConstraint *cons = [self.centerYAnchor constraintEqualToAnchor:otherAnchor constant:constant];
     cons.active = YES;
     self.qq_centerYCons = cons;
     return cons;
@@ -238,19 +238,19 @@
 
 #pragma mark - edge
 - (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperView {
-    return [self q_pinEdgesEqualSuperView:UIEdgeInsetsZero];
+    return [self q_pinEdgesEqualSuperViewInsets:UIEdgeInsetsZero];
 }
 
-- (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperView:(UIEdgeInsets)insets {
-    return [self q_pinEdgesEqualSuperView:insets isSafeArea:NO];
+- (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperViewInsets:(UIEdgeInsets)insets {
+    return [self q_pinEdgesEqualSuperViewInsets:insets isSafeArea:NO];
 }
 
 - (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperViewSafeArea {
-    return [self q_pinEdgesEqualSuperViewSafeArea:UIEdgeInsetsZero];
+    return [self q_pinEdgesEqualSuperViewSafeAreaInsets:UIEdgeInsetsZero];
 }
 
-- (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperViewSafeArea:(UIEdgeInsets)insets {
-    return [self q_pinEdgesEqualSuperView:insets isSafeArea:YES];
+- (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperViewSafeAreaInsets:(UIEdgeInsets)insets {
+    return [self q_pinEdgesEqualSuperViewInsets:insets isSafeArea:YES];
 }
 
 #pragma mark - remove
@@ -419,7 +419,7 @@
     return anchor;
 }
 
-- (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperView:(UIEdgeInsets)insets isSafeArea:(BOOL)isSafeArea {
+- (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperViewInsets:(UIEdgeInsets)insets isSafeArea:(BOOL)isSafeArea {
     NSLayoutConstraint *topCons;
     NSLayoutConstraint *leftCons;
     NSLayoutConstraint *bottomCons;
