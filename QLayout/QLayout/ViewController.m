@@ -19,10 +19,12 @@
     [super viewDidLoad];
     
     UIView *readView = [[UIView alloc]init];
+    readView.frame = CGRectMake(0, 0, 300, 300);
     readView.backgroundColor = [UIColor redColor];
     [self.view addSubview:readView];
     
     UIView *greenView = [[UIView alloc]init];
+    greenView.frame = CGRectMake(0, 0, 300, 300);
     greenView.backgroundColor = [UIColor greenColor];
     [self.view addSubview:greenView];
     
