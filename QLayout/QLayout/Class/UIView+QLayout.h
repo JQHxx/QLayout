@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofView:(UIView *)otherView withOffset:(CGFloat)offset;
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofView:(UIView *)otherView withOffset: (CGFloat)offset relation: (NSLayoutRelation) relation;
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofViewSafeArea:(UIView *)otherView;
-- (NSLayoutConstraint *)q_pinEdge: (QEdge)edge toEdge:(QEdge)toEdge ofViewSafeArea:(UIView *)otherView withOffset:(CGFloat)offset;
+- (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofViewSafeArea:(UIView *)otherView withOffset:(CGFloat)offset;
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofViewSafeArea:(UIView *)otherView withOffset:(CGFloat)offset relation:(NSLayoutRelation)relation;
 
 /// width constant
@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// centerX constant
 - (NSLayoutConstraint *)q_centerXEqualSuperView;
-- (NSLayoutConstraint *)q_centerXEqualSuperView:(CGFloat) constant;
+- (NSLayoutConstraint *)q_centerXEqualSuperView:(CGFloat)constant;
 - (NSLayoutConstraint *)q_centerXEqualXAxisAnchor:(NSLayoutXAxisAnchor *)superViewLayoutAnchor constant:(CGFloat)constant;
 
 /// centerY constant
