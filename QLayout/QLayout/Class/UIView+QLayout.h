@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Pin Edges
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofView:(UIView *)otherView;
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofView:(UIView *)otherView withOffset:(CGFloat)offset;
-- (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofView:(UIView *)otherView withOffset: (CGFloat)offset relation: (NSLayoutRelation) relation;
+- (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofView:(UIView *)otherView withOffset:(CGFloat)offset relation:(NSLayoutRelation)relation;
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofViewSafeArea:(UIView *)otherView;
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofViewSafeArea:(UIView *)otherView withOffset:(CGFloat)offset;
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofViewSafeArea:(UIView *)otherView withOffset:(CGFloat)offset relation:(NSLayoutRelation)relation;
@@ -45,13 +45,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *)q_widthEqualSuperView;
 - (NSLayoutConstraint *)q_widthEqual:(CGFloat)constant;
 - (NSLayoutConstraint *)q_widthEqual:(CGFloat)constant relation:(NSLayoutRelation)relation;
-- (NSLayoutConstraint *)q_widthEqualDimension:(NSLayoutDimension *)superViewLayoutAnchor multiplier: (CGFloat)multiplier constant:(CGFloat)constant relation:(NSLayoutRelation)relation;
+- (NSLayoutConstraint *)q_widthEqualDimension:(NSLayoutDimension *)superViewLayoutAnchor multiplier:(CGFloat)multiplier constant:(CGFloat)constant relation:(NSLayoutRelation)relation;
 
 /// height constant
 - (NSLayoutConstraint *)q_heightEqualSuperView;
 - (NSLayoutConstraint *)q_heightEqual:(CGFloat)constant;
 - (NSLayoutConstraint *)q_heightEqual:(CGFloat)constant relation:(NSLayoutRelation)relation;
-- (NSLayoutConstraint *)q_heightEqualDimension:(NSLayoutDimension *)superViewLayoutAnchor multiplier: (CGFloat)multiplier constant:(CGFloat)constant relation:(NSLayoutRelation)relation;
+- (NSLayoutConstraint *)q_heightEqualDimension:(NSLayoutDimension *)superViewLayoutAnchor multiplier:(CGFloat)multiplier constant:(CGFloat)constant relation:(NSLayoutRelation)relation;
 
 /// size
 - (NSArray *)q_sizeEqual:(CGSize)size;
