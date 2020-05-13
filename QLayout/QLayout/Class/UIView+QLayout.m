@@ -25,6 +25,7 @@
     return [self q_pinEdge:edge toEdge:edge ofView:superview withOffset:inset relation:relation isSafeArea: NO];
 }
 
+#pragma mark - Pin Edges to Superview SafeArea
 - (NSLayoutConstraint *)q_pinEdgeToSuperviewSafeAreaEdge:(QEdge)edge {
     return [self q_pinEdgeToSuperviewSafeAreaEdge:edge withInset:0];
 }
@@ -50,6 +51,7 @@
     return [self q_pinEdge:edge toEdge:toEdge ofView:otherView withOffset:(CGFloat)offset relation:relation isSafeArea: NO];
 }
 
+#pragma mark - Pin Edges SafeArea
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofViewSafeArea:(UIView *)otherView {
     return [self q_pinEdge:edge toEdge:toEdge ofViewSafeArea:otherView withOffset:0];
 }
@@ -236,7 +238,7 @@
     return cons;
 }
 
-#pragma mark - edge
+#pragma mark - Edges
 - (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperView {
     return [self q_pinEdgesEqualSuperViewInsets:UIEdgeInsetsZero];
 }
@@ -253,7 +255,7 @@
     return [self q_pinEdgesEqualSuperViewInsets:insets isSafeArea:YES];
 }
 
-#pragma mark - remove
+#pragma mark - Remove
 - (void)removeAllConstants {
     [self setTopConsNoActive];
     [self setLeftConsNoActive];
@@ -273,7 +275,7 @@
     NSAssert(otherView != nil, @"otherView must not be nil.\nView: %@", self);
     NSLayoutAnchor *selfAnchor = [self getSelfLayoutAnchorWithEdge:edge];
     NSLayoutAnchor *toAnchor = [self getOtherViewLayoutAnchorWithEdge:toEdge ofOtherView:otherView isSafeArea:isSafeArea];
-    NSLayoutConstraint *cons = [self getConstraint:selfAnchor toAnchor:toAnchor withInset:offset relation:relation];
+    NSLayoutConstraint *cons = [self getConstraintSelfAnchor:selfAnchor toAnchor:toAnchor withInset:offset relation:relation];
     [self setConstraint:cons withEdge:edge];
     cons.active = YES;
     return cons;
@@ -310,7 +312,7 @@
     return anchor;
 }
 
-- (NSLayoutConstraint *)getConstraint:(NSLayoutAnchor *)selfAnchor toAnchor:(NSLayoutAnchor *)toAnchor withInset:(CGFloat)inset relation:(NSLayoutRelation)relation {
+- (NSLayoutConstraint *)getConstraintSelfAnchor:(NSLayoutAnchor *)selfAnchor toAnchor:(NSLayoutAnchor *)toAnchor withInset:(CGFloat)inset relation:(NSLayoutRelation)relation {
     NSLayoutConstraint *cons;
     switch (relation) {
         case NSLayoutRelationEqual: {
@@ -452,6 +454,76 @@
     return cons;
 }
 
+- (void)setTopConsNoActive {
+    if (self.qq_topCons) {
+        self.qq_topCons.active = NO;
+        self.qq_topCons = nil;
+    }
+}
+
+- (void)setLeadingConsNoActive {
+    if (self.qq_leadingCons) {
+        self.qq_leadingCons.active = NO;
+        self.qq_leadingCons = nil;
+    }
+}
+
+- (void)setRightConsNoActive {
+    if (self.qq_rightCons) {
+        self.qq_rightCons.active = NO;
+        self.qq_rightCons = nil;
+    }
+}
+
+- (void)setTrailingConsNoActive {
+    if (self.qq_trailingCons) {
+        self.qq_trailingCons.active = NO;
+        self.qq_trailingCons = nil;
+    }
+}
+
+- (void)setBottomConsNoActive {
+    if (self.qq_bottomCons) {
+        self.qq_bottomCons.active = NO;
+        self.qq_bottomCons = nil;
+    }
+}
+
+- (void)setLeftConsNoActive {
+    if (self.qq_leftCons) {
+        self.qq_leftCons.active = NO;
+        self.qq_leftCons = nil;
+    }
+}
+
+- (void)setWidthConsNoActive {
+    if (self.qq_widthCons) {
+        self.qq_widthCons.active = NO;
+        self.qq_widthCons = nil;
+    }
+}
+
+- (void)setHeightConsNoActive {
+    if (self.qq_heightCons) {
+        self.qq_heightCons.active = NO;
+        self.qq_heightCons = nil;
+    }
+}
+
+- (void)setCenterXConsNoActive {
+    if (self.qq_centerXCons) {
+        self.qq_centerXCons.active = NO;
+        self.qq_centerXCons = nil;
+    }
+}
+
+- (void)setCenterYConsNoActive {
+    if (self.qq_centerYCons) {
+        self.qq_centerYCons.active = NO;
+        self.qq_centerYCons = nil;
+    }
+}
+
 #pragma mark - Getter & Setter
 static void *kUIViewLayoutMethodPropertyTop = &kUIViewLayoutMethodPropertyTop;
 static void *kUIViewLayoutMethodPropertyRight = &kUIViewLayoutMethodPropertyRight;
@@ -542,77 +614,6 @@ static void *kUIViewLayoutMethodPropertyCenterY = &kUIViewLayoutMethodPropertyCe
 
 - (NSLayoutConstraint *)qq_centerYCons {
     return objc_getAssociatedObject(self, kUIViewLayoutMethodPropertyCenterY);
-}
-
-#pragma mark - Private methods
-- (void)setTopConsNoActive {
-    if (self.qq_topCons) {
-        self.qq_topCons.active = NO;
-        self.qq_topCons = nil;
-    }
-}
-
-- (void)setLeadingConsNoActive {
-    if (self.qq_leadingCons) {
-        self.qq_leadingCons.active = NO;
-        self.qq_leadingCons = nil;
-    }
-}
-
-- (void)setRightConsNoActive {
-    if (self.qq_rightCons) {
-        self.qq_rightCons.active = NO;
-        self.qq_rightCons = nil;
-    }
-}
-
-- (void)setTrailingConsNoActive {
-    if (self.qq_trailingCons) {
-        self.qq_trailingCons.active = NO;
-        self.qq_trailingCons = nil;
-    }
-}
-
-- (void)setBottomConsNoActive {
-    if (self.qq_bottomCons) {
-        self.qq_bottomCons.active = NO;
-        self.qq_bottomCons = nil;
-    }
-}
-
-- (void)setLeftConsNoActive {
-    if (self.qq_leftCons) {
-        self.qq_leftCons.active = NO;
-        self.qq_leftCons = nil;
-    }
-}
-
-- (void)setWidthConsNoActive {
-    if (self.qq_widthCons) {
-        self.qq_widthCons.active = NO;
-        self.qq_widthCons = nil;
-    }
-}
-
-- (void)setHeightConsNoActive {
-    if (self.qq_heightCons) {
-        self.qq_heightCons.active = NO;
-        self.qq_heightCons = nil;
-    }
-}
-
-- (void)setCenterXConsNoActive {
-    if (self.qq_centerXCons) {
-        self.qq_centerXCons.active = NO;
-        self.qq_centerXCons = nil;
-    }
-}
-
-- (void)setCenterYConsNoActive {
-    if (self.qq_centerYCons) {
-        self.qq_centerYCons.active = NO;
-        self.qq_centerYCons = nil;
-    }
 }
 
 @end

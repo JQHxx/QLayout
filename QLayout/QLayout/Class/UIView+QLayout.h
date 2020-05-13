@@ -41,35 +41,35 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofViewSafeArea:(UIView *)otherView withOffset:(CGFloat)offset;
 - (NSLayoutConstraint *)q_pinEdge:(QEdge)edge toEdge:(QEdge)toEdge ofViewSafeArea:(UIView *)otherView withOffset:(CGFloat)offset relation:(NSLayoutRelation)relation;
 
-/// width constant
+#pragma mark - Width
 - (NSLayoutConstraint *)q_widthEqualSuperView;
 - (NSLayoutConstraint *)q_widthEqualConstant:(CGFloat)constant;
 - (NSLayoutConstraint *)q_widthEqualConstant:(CGFloat)constant relation:(NSLayoutRelation)relation;
 - (NSLayoutConstraint *)q_widthEqualDimension:(NSLayoutDimension *)otherDimension multiplier:(CGFloat)multiplier constant:(CGFloat)constant relation:(NSLayoutRelation)relation;
 
-/// height constant
+#pragma mark - Height
 - (NSLayoutConstraint *)q_heightEqualSuperView;
 - (NSLayoutConstraint *)q_heightEqualConstant:(CGFloat)constant;
 - (NSLayoutConstraint *)q_heightEqualConstant:(CGFloat)constant relation:(NSLayoutRelation)relation;
 - (NSLayoutConstraint *)q_heightEqualDimension:(NSLayoutDimension *)otherDimension multiplier:(CGFloat)multiplier constant:(CGFloat)constant relation:(NSLayoutRelation)relation;
 
-/// size
+#pragma mark - Size
 - (NSArray *)q_sizeEqualSize:(CGSize)size;
 
-/// centerX constant
+#pragma mark - CenterX
 - (NSLayoutConstraint *)q_centerXEqualSuperView;
 - (NSLayoutConstraint *)q_centerXEqualSuperViewConstant:(CGFloat)constant;
 - (NSLayoutConstraint *)q_centerXEqualXAxisAnchor:(NSLayoutXAxisAnchor *)otherAnchor constant:(CGFloat)constant;
 
-/// centerY constant
+#pragma mark - CenterY
 - (NSLayoutConstraint *)q_centerYEqualSuperView;
 - (NSLayoutConstraint *)q_centerYEqualSuperViewConstant:(CGFloat)constant;
 - (NSLayoutConstraint *)q_centerYEqualYAxisAnchor:(NSLayoutYAxisAnchor *)otherAnchor constant:(CGFloat)constant;
 
-/// center
+#pragma mark - Center
 - (NSArray <NSLayoutConstraint *> *)q_centerEqualSuperView;
 
-/// edge constant
+#pragma mark - Edges
 - (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperView;
 - (NSArray <NSLayoutConstraint *> *)q_pinEdgesEqualSuperViewSafeArea;
 // insets top, left, bottom, right
