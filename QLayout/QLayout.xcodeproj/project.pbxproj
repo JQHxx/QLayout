@@ -16,6 +16,7 @@
 		A018FDE224691252007703F6 /* QLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A018FDE124691252007703F6 /* QLayoutTests.m */; };
 		A018FDED24691252007703F6 /* QLayoutUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A018FDEC24691252007703F6 /* QLayoutUITests.m */; };
 		A018FE0B24695542007703F6 /* UIView+QLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A018FE0A24695541007703F6 /* UIView+QLayout.m */; };
+		A0C0B825246B8018005DE186 /* NSArray+QLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C0B824246B8018005DE186 /* NSArray+QLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,10 @@
 		A018FDEE24691252007703F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A018FE0924695541007703F6 /* UIView+QLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QLayout.h"; sourceTree = "<group>"; };
 		A018FE0A24695541007703F6 /* UIView+QLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QLayout.m"; sourceTree = "<group>"; };
+		A0C0B822246B8004005DE186 /* QLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLayout.h; sourceTree = "<group>"; };
+		A0C0B823246B8018005DE186 /* NSArray+QLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+QLayout.h"; sourceTree = "<group>"; };
+		A0C0B824246B8018005DE186 /* NSArray+QLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+QLayout.m"; sourceTree = "<group>"; };
+		A0C0B826246B854A005DE186 /* QLayoutDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLayoutDefines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +144,10 @@
 		A018FDFA2469126A007703F6 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A0C0B822246B8004005DE186 /* QLayout.h */,
+				A0C0B826246B854A005DE186 /* QLayoutDefines.h */,
+				A0C0B823246B8018005DE186 /* NSArray+QLayout.h */,
+				A0C0B824246B8018005DE186 /* NSArray+QLayout.m */,
 				A018FE0924695541007703F6 /* UIView+QLayout.h */,
 				A018FE0A24695541007703F6 /* UIView+QLayout.m */,
 			);
@@ -278,6 +287,7 @@
 				A018FDCD2469124E007703F6 /* ViewController.m in Sources */,
 				A018FDC72469124E007703F6 /* AppDelegate.m in Sources */,
 				A018FE0B24695542007703F6 /* UIView+QLayout.m in Sources */,
+				A0C0B825246B8018005DE186 /* NSArray+QLayout.m in Sources */,
 				A018FDD824691252007703F6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
