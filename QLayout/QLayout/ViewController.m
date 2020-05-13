@@ -50,6 +50,14 @@
     //[self test3:readView];
     //[self test4:readView];
     
+    /*
+    NSMapTable *mapTable = [[NSMapTable alloc]init];
+    [mapTable setObject:@"test" forKey:@"key"];
+    
+    NSArray *ids = [mapTable keyEnumerator].allObjects;
+    NSArray *objs = [mapTable objectEnumerator].allObjects;
+     */
+
 }
 
 - (void) test1: (UIView *) view {
