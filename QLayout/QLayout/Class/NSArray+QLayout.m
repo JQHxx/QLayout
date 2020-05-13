@@ -20,7 +20,7 @@
             UIView *view = (UIView *)object;
             view.translatesAutoresizingMaskIntoConstraints = NO;
             if (previousView) {
-                [constraints addObject:[view q_pinEdge:edge toEdge:edge ofView:previousView]];
+                [constraints addObject:[view q_pinEdge:edge toEdge:edge ofView:previousView withOffset:0]];
             }
             previousView = view;
         }

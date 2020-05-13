@@ -26,14 +26,16 @@
     greenView.backgroundColor = [UIColor greenColor];
     [self.view addSubview:greenView];
     
-    [@[readView, greenView] q_viewsAlignToEdge:QEdgeTop];
+    //[@[readView, greenView] q_viewsAlignToEdge:QEdgeTop];
     //[@[readView, greenView] q_viewsAlignToEdge:QEdgeBottom];
+    [@[readView, greenView] q_viewsAlignToAxis:QAxisHorizontal];
     [@[readView, greenView] q_viewsWidthEqual];
     [@[readView, greenView] q_viewsHeightEqual];
     
-    [readView q_sizeEqual:CGSizeMake(100, 100)];
+    [readView q_sizeEqual:CGSizeMake(50, 100)];
     [readView q_pinEdgeToSuperViewEdge:QEdgeTop withInset:100];
-    [greenView q_pinEdge:QEdgeLeft toEdge:QEdgeRight ofView:readView withOffset:10];
+    [greenView q_pinEdge:QEdgeLeft toEdge:QEdgeRight ofView:readView];
+    [readView q_pinEdgeToSuperViewEdge:QEdgeTop withInset:100];
 
     /*
     for (UIView *view in @[readView, greenView]) {
@@ -41,9 +43,9 @@
     }
      */
     
-    [self test1:readView];
-    [self test2:readView];
-    [self test3:readView];
+    //[self test1:readView];
+    //[self test2:readView];
+    //[self test3:readView];
     //[self test4:readView];
     
 }
