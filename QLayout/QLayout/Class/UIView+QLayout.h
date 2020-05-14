@@ -14,16 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (QLayout)
 
 /// property
-@property (nonatomic, strong) NSLayoutConstraint * _Nullable qq_topCons;
-@property (nonatomic, strong) NSLayoutConstraint * _Nullable qq_rightCons;
-@property (nonatomic, strong) NSLayoutConstraint * _Nullable qq_trailingCons;
-@property (nonatomic, strong) NSLayoutConstraint * _Nullable qq_bottomCons;
-@property (nonatomic, strong) NSLayoutConstraint * _Nullable qq_leftCons;
-@property (nonatomic, strong) NSLayoutConstraint * _Nullable qq_leadingCons;
-@property (nonatomic, strong) NSLayoutConstraint * _Nullable qq_widthCons;
-@property (nonatomic, strong) NSLayoutConstraint * _Nullable qq_heightCons;
-@property (nonatomic, strong) NSLayoutConstraint * _Nullable qq_centerXCons;
-@property (nonatomic, strong) NSLayoutConstraint * _Nullable qq_centerYCons;
+@property (nonatomic, strong, nullable) NSLayoutConstraint * qq_topCons;
+@property (nonatomic, strong, nullable) NSLayoutConstraint * qq_rightCons;
+@property (nonatomic, strong, nullable) NSLayoutConstraint * qq_trailingCons;
+@property (nonatomic, strong, nullable) NSLayoutConstraint * qq_bottomCons;
+@property (nonatomic, strong, nullable) NSLayoutConstraint * qq_leftCons;
+@property (nonatomic, strong, nullable) NSLayoutConstraint * qq_leadingCons;
+@property (nonatomic, strong, nullable) NSLayoutConstraint * qq_widthCons;
+@property (nonatomic, strong, nullable) NSLayoutConstraint * qq_heightCons;
+@property (nonatomic, strong, nullable) NSLayoutConstraint * qq_centerXCons;
+@property (nonatomic, strong, nullable) NSLayoutConstraint * qq_centerYCons;
 
 #pragma mark - Pin Edges to Superview
 - (NSLayoutConstraint *)q_pinEdgeToSuperViewEdge:(QEdge)edge;
