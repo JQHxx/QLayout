@@ -6,13 +6,13 @@
 //  Copyright © 2020 OFweek01. All rights reserved.
 //
 
-#import "NSArray+QLayout.h"
-#import "UIView+QLayout.h"
+#import "NSArray+QQLayout.h"
+#import "UIView+QQLayout.h"
 
-@implementation NSArray (QLayout)
+@implementation NSArray (QQLayout)
 
-- (NSArray <NSLayoutConstraint *> *)q_viewsAlignToEdge:(QEdge)edge {
-    NSAssert([self q_containsMinimumNumberOfViews:2], @"This array must contain at least 2 views.");
+- (NSArray <NSLayoutConstraint *> *)qq_viewsAlignToEdge:(QQEdge)edge {
+    NSAssert([self qq_containsMinimumNumberOfViews:2], @"This array must contain at least 2 views.");
     NSMutableArray<NSLayoutConstraint *> *constraints = [NSMutableArray new];
     UIView *previousView = nil;
     for (id object in self) {
@@ -20,7 +20,7 @@
             UIView *view = (UIView *)object;
             view.translatesAutoresizingMaskIntoConstraints = NO;
             if (previousView) {
-                [constraints addObject:[view q_pinEdge:edge toEdge:edge ofView:previousView withOffset:0]];
+                [constraints addObject:[view qq_pinEdge:edge toEdge:edge ofView:previousView withOffset:0]];
             }
             previousView = view;
         }
@@ -28,8 +28,8 @@
     return constraints;
 }
 
-- (NSArray <NSLayoutConstraint *> *)q_viewsAlignToAxis:(QAxis)axis {
-    NSAssert([self q_containsMinimumNumberOfViews:2], @"This array must contain at least 2 views.");
+- (NSArray <NSLayoutConstraint *> *)qq_viewsAlignToAxis:(QQAxis)axis {
+    NSAssert([self qq_containsMinimumNumberOfViews:2], @"This array must contain at least 2 views.");
     NSMutableArray<NSLayoutConstraint *> *constraints = [NSMutableArray new];
     UIView *previousView = nil;
     for (id object in self) {
@@ -38,12 +38,12 @@
             view.translatesAutoresizingMaskIntoConstraints = NO;
             if (previousView) {
                 switch (axis) {
-                    case QAxisVertical: {
-                        [constraints addObject:[view q_centerXEqualXAxisAnchor:previousView.centerXAnchor constant:0]];
+                    case QQAxisVertical: {
+                        [constraints addObject:[view qq_centerXEqualXAxisAnchor:previousView.centerXAnchor constant:0]];
                         break;
                     }
-                    case QAxisHorizontal: {
-                        [constraints addObject:[view q_centerYEqualYAxisAnchor:previousView.centerYAnchor constant:0]];
+                    case QQAxisHorizontal: {
+                        [constraints addObject:[view qq_centerYEqualYAxisAnchor:previousView.centerYAnchor constant:0]];
                         break;
                     }
                 }
@@ -54,8 +54,8 @@
     return constraints;
 }
 
-- (NSArray <NSLayoutConstraint *> *)q_viewsWidthEqual {
-    NSAssert([self q_containsMinimumNumberOfViews:2], @"This array must contain at least 2 views.");
+- (NSArray <NSLayoutConstraint *> *)qq_viewsWidthEqual {
+    NSAssert([self qq_containsMinimumNumberOfViews:2], @"This array must contain at least 2 views.");
     NSMutableArray<NSLayoutConstraint *> *constraints = [NSMutableArray new];
     UIView *previousView = nil;
     for (id object in self) {
@@ -63,7 +63,7 @@
             UIView *view = (UIView *)object;
             view.translatesAutoresizingMaskIntoConstraints = NO;
             if (previousView) {
-                [constraints addObject:[view q_widthEqualDimension:previousView.widthAnchor multiplier:1.0 constant:0 relation:NSLayoutRelationEqual]];
+                [constraints addObject:[view qq_widthEqualDimension:previousView.widthAnchor multiplier:1.0 constant:0 relation:NSLayoutRelationEqual]];
             }
             previousView = view;
         }
@@ -71,8 +71,8 @@
     return constraints;
 }
 
-- (NSArray <NSLayoutConstraint *> *)q_viewsHeightEqual {
-    NSAssert([self q_containsMinimumNumberOfViews:2], @"This array must contain at least 2 views.");
+- (NSArray <NSLayoutConstraint *> *)qq_viewsHeightEqual {
+    NSAssert([self qq_containsMinimumNumberOfViews:2], @"This array must contain at least 2 views.");
     NSMutableArray<NSLayoutConstraint *> *constraints = [NSMutableArray new];
     UIView *previousView = nil;
     for (id object in self) {
@@ -80,7 +80,7 @@
             UIView *view = (UIView *)object;
             view.translatesAutoresizingMaskIntoConstraints = NO;
             if (previousView) {
-                [constraints addObject:[view q_heightEqualDimension:previousView.heightAnchor multiplier:1.0 constant:0 relation:NSLayoutRelationEqual]];
+                [constraints addObject:[view qq_heightEqualDimension:previousView.heightAnchor multiplier:1.0 constant:0 relation:NSLayoutRelationEqual]];
             }
             previousView = view;
         }
@@ -90,7 +90,7 @@
 
 
 #pragma mark - Private methods
-- (BOOL)q_containsMinimumNumberOfViews:(NSUInteger)minimumNumberOfViews
+- (BOOL)qq_containsMinimumNumberOfViews:(NSUInteger)minimumNumberOfViews
 {
     NSUInteger numberOfViews = 0;
     for (id object in self) {

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "QLayout.h"
+#import "QQLayout.h"
 
 @interface ViewController ()
 
@@ -28,16 +28,16 @@
     greenView.backgroundColor = [UIColor greenColor];
     [self.view addSubview:greenView];
     
-    //[@[readView, greenView] q_viewsAlignToEdge:QEdgeTop];
-    //[@[readView, greenView] q_viewsAlignToEdge:QEdgeBottom];
-    [@[readView, greenView] q_viewsAlignToAxis:QAxisHorizontal];
-    [@[readView, greenView] q_viewsWidthEqual];
-    [@[readView, greenView] q_viewsHeightEqual];
+    //[@[readView, greenView] qq_viewsAlignToEdge:QEdgeTop];
+    //[@[readView, greenView] qq_viewsAlignToEdge:QEdgeBottom];
+    [@[readView, greenView] qq_viewsAlignToAxis:QQAxisHorizontal];
+    [@[readView, greenView] qq_viewsWidthEqual];
+    [@[readView, greenView] qq_viewsHeightEqual];
     
-    [readView q_sizeEqualSize:CGSizeMake(50, 100)];
-    [readView q_pinEdgeToSuperViewEdge:QEdgeTop withInset:100];
-    [greenView q_pinEdge:QEdgeLeft toEdge:QEdgeRight ofView:readView];
-    [readView q_pinEdgeToSuperViewEdge:QEdgeTop withInset:100];
+    [readView qq_sizeEqualSize:CGSizeMake(50, 100)];
+    [readView qq_pinEdgeToSuperViewEdge:QQEdgeTop withInset:100];
+    [greenView qq_pinEdge:QQEdgeLeft toEdge:QQEdgeRight ofView:readView];
+    [readView qq_pinEdgeToSuperViewEdge:QQEdgeTop withInset:100];
 
     /*
     for (UIView *view in @[readView, greenView]) {
@@ -62,28 +62,28 @@
 
 - (void) test1: (UIView *) view {
     [view removeAllConstants];
-    [view q_pinEdge:QEdgeTop toEdge:QEdgeTop ofView:self.view];
-    [view q_pinEdge:QEdgeLeft toEdge:QEdgeLeft ofView:self.view];
-    [view q_pinEdge:QEdgeRight toEdge:QEdgeRight ofView:self.view];
-    [view q_pinEdge:QEdgeBottom toEdge:QEdgeBottom ofViewSafeArea:self.view];
+    [view qq_pinEdge:QQEdgeTop toEdge:QQEdgeTop ofView:self.view];
+    [view qq_pinEdge:QQEdgeLeft toEdge:QQEdgeLeft ofView:self.view];
+    [view qq_pinEdge:QQEdgeRight toEdge:QQEdgeRight ofView:self.view];
+    [view qq_pinEdge:QQEdgeBottom toEdge:QQEdgeBottom ofViewSafeArea:self.view];
 }
 
 
 - (void) test2: (UIView *) view {
     [view removeAllConstants];
-    [view q_pinEdgesEqualSuperViewSafeArea];
+    [view qq_pinEdgesEqualSuperViewSafeArea];
 }
 
 - (void) test3: (UIView *) view {
     [view removeAllConstants];
-    [view q_centerXEqualSuperView];
-    [view q_centerYEqualSuperView];
-    [view q_sizeEqualSize:CGSizeMake(100, 100)];
+    [view qq_centerXEqualSuperView];
+    [view qq_centerYEqualSuperView];
+    [view qq_sizeEqualSize:CGSizeMake(100, 100)];
 }
 
 - (void) test4: (UIView *) view {
     [view removeAllConstants];
-    [view q_pinEdgesEqualSuperViewInsets:UIEdgeInsetsMake(50, 0, -50, 0)];
+    [view qq_pinEdgesEqualSuperViewInsets:UIEdgeInsetsMake(50, 0, -50, 0)];
 }
 
 

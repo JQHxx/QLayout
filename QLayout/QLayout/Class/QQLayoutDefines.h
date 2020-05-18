@@ -6,31 +6,31 @@
 //  Copyright © 2020 OFweek01. All rights reserved.
 //
 
-#ifndef QLayoutDefines_h
-#define QLayoutDefines_h
+#ifndef QQLayoutDefines_h
+#define QQLayoutDefines_h
 
 /** Constants that represent edges of a view. */
-typedef NS_ENUM(NSInteger, QEdge) {
+typedef NS_ENUM(NSInteger, QQEdge) {
     /** The left edge of the view. */
-    QEdgeLeft = NSLayoutAttributeLeft,
+    QQEdgeLeft = NSLayoutAttributeLeft,
     /** The right edge of the view. */
-    QEdgeRight = NSLayoutAttributeRight,
+    QQEdgeRight = NSLayoutAttributeRight,
     /** The top edge of the view. */
-    QEdgeTop = NSLayoutAttributeTop,
+    QQEdgeTop = NSLayoutAttributeTop,
     /** The bottom edge of the view. */
-    QEdgeBottom = NSLayoutAttributeBottom,
+    QQEdgeBottom = NSLayoutAttributeBottom,
     /** The leading edge of the view (left edge for left-to-right languages like English, right edge for right-to-left languages like Arabic). */
-    QEdgeLeading = NSLayoutAttributeLeading,
+    QQEdgeLeading = NSLayoutAttributeLeading,
     /** The trailing edge of the view (right edge for left-to-right languages like English, left edge for right-to-left languages like Arabic). */
-    QEdgeTrailing = NSLayoutAttributeTrailing
+    QQEdgeTrailing = NSLayoutAttributeTrailing
 };
 
 /** Constants that represent axes of a view. */
-typedef NS_ENUM(NSInteger, QAxis) {
+typedef NS_ENUM(NSInteger, QQAxis) {
     /** A vertical line equidistant from the view's left and right edges. */
-    QAxisVertical = NSLayoutAttributeCenterX,
+    QQAxisVertical = NSLayoutAttributeCenterX,
     /** A horizontal line equidistant from the view's top and bottom edges. */
-    QAxisHorizontal = NSLayoutAttributeCenterY,
+    QQAxisHorizontal = NSLayoutAttributeCenterY,
 };
 
 #endif /* QLayoutDefines_h */
